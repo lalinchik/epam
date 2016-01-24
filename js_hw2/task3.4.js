@@ -11,16 +11,9 @@ var text = "В этой статье я хочу по возможности п�
     "и user@host фреймворки. Сложность материала будет user@host нарастать от начала к концу статьи, так что для профи первые части могут " +
     "показаться скучными и банальными, но дальше будет намного интереснее :)";
 
+var newText = text.replace(emailPattern, function(str){
+    return "\<a ref=\"mailto:" + str + "\"\>" + str + "\<\/a\>"
+});
 
-var textArr = text.split(" ");
-
-for(let i = 0; i < textArr.length; i++){
-    if(emailPattern.test(textArr[i])){
-        var str = textArr[i];
-        textArr[i] = "\<a ref=\"mailto:" + str + "\"\>" + str + "\<\/a\>";
-    }
-}
-
-var newText = textArr.join(" ");
 document.write(newText);
 console.log(newText);
