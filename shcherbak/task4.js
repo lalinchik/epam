@@ -20,12 +20,12 @@ console.table(array);
 for(let i = 0; i < array.length; i++){
     for(let j = 0; j < array[i].length; j++){
 
-        if(array[i][j] === array[i-1][j]) {
-            console.log(array[i][j], array[i-1][j]);
-            array[i-1][j] = 0;
-        } else if(array[i][j] === array[i][j+1]) {
-            console.log(array[i][j], array[i][j+1]);
+        if(array[i][j] === array[i][j+1]) {
+            console.log(array[i][j], array[i][j + 1]);
             j++;
+        } else if(array[i][j] === array[i+1][j]) {
+            console.log(array[i][j], array[i+1][j]);
+            array[i+1][j] = 0;
         }
     }
 }
