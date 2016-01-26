@@ -47,13 +47,6 @@ var user3 = {
     programmingLanguages: ["HTML", "CSS", "Python", "Ruby"]
 };
 
-function isAddressValid(user){
-    var streetPattern = /[0-9]{4}\s[a-z]+\s[a-z]+/;
-    var zipPattern = /[0-9A-Z]+\s[0-9A-Z]{3}/;
-
-    return streetPattern.test(user.location.street) && user.location.zip.match(zipPattern) != null;
-}
-
 var bidderList = {
     add: function(user){
         if(!(user.id in bidderList) && isAddressValid(user)){
@@ -61,6 +54,15 @@ var bidderList = {
         }
     }
 };
+
+function isAddressValid(user){
+    var streetPattern = /[0-9]{4}\s[a-z]+\s[a-z]+/;
+    var zipPattern = /[0-9A-Z]+\s[0-9A-Z]{3}/;
+
+    return streetPattern.test(user.location.street) && user.location.zip.match(zipPattern) != null;
+}
+
+
 
 bidderList.add(user1);
 bidderList.add(user2);
