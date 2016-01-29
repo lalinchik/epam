@@ -13,12 +13,12 @@ while (num != 0){
 
 
 function foundMin(){
-    let max = arguments[0];
+    let min = arguments[0];
     for (let i = 1; i < arguments.length; i++){
-        if(arguments[i] > max){
-            max = arguments[i];
+        if(arguments[i] < min){
+            min = arguments[i];
         }
     }
 
-    return max;
+    return min;
 }

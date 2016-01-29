@@ -3,6 +3,10 @@ var func = function (x) {
     return x / 2;
 };
 
+var func2 = function(x){
+    return x / 2;
+};
+
 function arrayFromRange(start, end) {
     let arr = [];
     for (let i = start; i < end; i++) {
@@ -17,4 +21,17 @@ function findMin(f, start, end) {
     return arr.reduce((min, current) => Math.min(min, current));
 }
 
-console.log(findMin(func, 5, 10));
+function findMin2(f, start, end){
+    let min = f(start);
+    let step = (end - start)/ 1000;
+
+    for (let i = start + step; i < end; i += step){
+        if(f(i) < min){
+            min = f(i);
+        }
+    }
+
+    return min;
+}
+
+console.log(findMin2(func, 5, 10));

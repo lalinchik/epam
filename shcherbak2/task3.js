@@ -68,5 +68,5 @@ bidderList.add(user1);
 bidderList.add(user2);
 bidderList.add(user3);
 
-console.log(bidderList);
+
 
