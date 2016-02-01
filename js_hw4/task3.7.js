@@ -4,12 +4,12 @@
 var text = "9 марта в 14.00 на площади возле школы будет проходить собрание всех без исключений. На собрании будет " +
     "отчет главы кооператива";
 
-function massage(text, signature){
+function message(text, signature){
     if(signature == undefined){
         document.write(text + "<br/>" + "Оргокомитет.");
     } else {
         document.write(text + "<br/>"  + signature + ".");
     }
 }
-massage(text);
-massage(text, "Администрация");
+message(text);
+message(text, "Администрация");
