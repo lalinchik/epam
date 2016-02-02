@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.5</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .block {
+            display: flex;
+        }
+
+        .big-img {
+            width: 500px;
+            height: 400px;
+        }
+
+        .small-img {
+            width: 150px;
+            height: 150px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+<img class="big-img" src="image/photo11.jpg">
+<div class="block">
+    <img class="small-img" src="image/photo1.jpg">
+    <img class="small-img" src="image/photo2.jpg">
+    <img class="small-img" src="image/photo5.jpg">
+    <img class="small-img" src="image/photo3.jpg">
+    <img class="small-img" src="image/photo4.jpg">
+    <img class="small-img" src="image/photo6.jpg">
+</div>
+
+<script>
+    "use strict";
+    let smallList = document.querySelectorAll(".small-img");
+    let smallArray = Array.prototype.slice.call(smallList, 0);
+
+    smallArray.forEach(function (element) {
+        element.addEventListener("click", function (event) {
+            document.querySelector(".big-img").src = this.src;
+        });
+    });
+</script>
+</body>
+</html>
