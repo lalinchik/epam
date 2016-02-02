@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Photo</title>
+    <style>
+        .image {
+            width: 200px;
+            height: auto;
+        }
+        .large{
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+<img class="image" src="810733.jpg">
+<script async>
+    var image = document.querySelector(".image");
+    image.addEventListener("click", function () {
+        image.classList.toggle("large");
+    });
+
+</script>
+</body>
+</html>
