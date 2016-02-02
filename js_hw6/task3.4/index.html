@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.4</title>
+</head>
+<body>
+<p class="text"></p>
+
+<script>
+    'use strict';
+
+    function printTextSlowly(sentence, delay) {
+        let count = 0;
+
+        function print() {
+            let text = document.querySelector(".text");
+            text.innerHTML += sentence.substr(count, 1);
+            count++;
+            if (count < sentence.length) {
+                setTimeout(print, delay);
+            }
+        }
+
+        setTimeout(print, delay);
+    }
+
+    let sentence = "Софія не мала жодної гадки, що в цей день, 16-того квітня 2009-го року щось повинно статися.";
+    printTextSlowly(sentence, 100);
+
+</script>
+</body>
+</html>
