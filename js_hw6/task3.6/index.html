@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 3.6</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+        }
+
+        #wrap {
+            width: 500px;
+        }
+
+        .small-img {
+            display: none;
+        }
+
+        .active {
+            display: block;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <img class="small-img active" src="../task3.5/image/photo1.jpg">
+    <img class="small-img" src="../task3.5/image/photo2.jpg">
+    <img class="small-img" src="../task3.5/image/photo5.jpg">
+    <img class="small-img" src="../task3.5/image/photo3.jpg">
+    <img class="small-img" src="../task3.5/image/photo4.jpg">
+    <img class="small-img" src="../task3.5/image/photo6.jpg">
+</div>
+
+<script>
+    "use strict";
+    let imageList = wrap.childNodes;
+    let array = Array.prototype.slice.call(imageList, 0);
+    let imageArray = array.filter(function (element) {
+        return element.nodeType == 1;
+    });
+
+
+    //    function print(str){
+    //        alert(str);
+    //    }
+    //
+    //    let d = setInterval(print("bu"), 500);
+    //    setTimeout(function() {
+    //        clearInterval(d);
+    //        alert( 'стоп' );
+    //    }, 5000);
+</script>
+</body>
+</html>

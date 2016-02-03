@@ -3,10 +3,6 @@ var func = function (x) {
     return x / 2;
 };
 
-var func2 = function(x){
-    return x / 2;
-};
-
 function arrayFromRange(start, end) {
     let arr = [];
     for (let i = start; i < end; i++) {
