@@ -35,22 +35,33 @@
 
 <script>
     "use strict";
-    let imageList = wrap.childNodes;
-    let array = Array.prototype.slice.call(imageList, 0);
-    let imageArray = array.filter(function (element) {
-        return element.nodeType == 1;
-    });
+    function getPreviews(wrap) {
+        let imageList = wrap.childNodes;
+        let array = Array.prototype.slice.call(imageList, 0);
+        return array.filter(function (element) {
+            return element.nodeType == 1;
+        });
+    }
 
+    function slideShow(element, urls, delay) {
+        let i = 0;
+        var f = function () {
+            if (i < urls.length) {
+                element.src = urls[i++];
+                setTimeout(f, delay)
+            }
+            else {
+                i = 0;
+                f();
+            }
+        };
 
-    //    function print(str){
-    //        alert(str);
-    //    }
-    //
-    //    let d = setInterval(print("bu"), 500);
-    //    setTimeout(function() {
-    //        clearInterval(d);
-    //        alert( 'стоп' );
-    //    }, 5000);
+        setTimeout(f, delay)
+    }
+
+    var urls = getPreviews(wrap).map(image => image.src);
+    slideShow(document.querySelector(".active"), urls, 1000);
+
 </script>
 </body>
 </html>
